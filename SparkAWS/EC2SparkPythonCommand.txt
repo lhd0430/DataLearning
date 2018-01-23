@@ -1,0 +1,13 @@
+yum install python35
+echo 'PYSPARK_PYTHON=/usr/bin/python35' >> conf/spark-env.sh
+pssh -h conf/slaves yum -y install python35
+pssh -h conf/slaves 'echo "PYSPARK_PYTHON=/usr/bin/python35" > spark/conf/spark-env.sh'
+curl -O https://bootstrap.pypa.io/get-pip.py
+python35 get-pip.py
+python35 /usr/bin/pip3.5 install rdflib
+python35 /usr/bin/pip3.5 install boto3
+pssh -h conf/slaves curl -O https://bootstrap.pypa.io/get-pip.py
+pssh -h conf/slaves python35 get-pip.py 
+pssh -h conf/slaves python35 /usr/bin/pip3.5 install rdflib
+pssh -h conf/slaves python35 /usr/bin/pip3.5 install boto3
+

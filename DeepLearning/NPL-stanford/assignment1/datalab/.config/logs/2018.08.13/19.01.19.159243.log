@@ -1,0 +1,9 @@
+2018-08-13 19:01:19,161 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
+2018-08-13 19:01:19,173 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'list']
+2018-08-13 19:01:19,175 DEBUG    root            Running gcloud.config.list with Namespace(_deepest_parser=ArgumentParser(prog='gcloud.config.list', usage=None, description='Lists all properties in your active configuration. These include the\naccount used to authorize access to the Cloud Platform, the current Cloud\nPlatform project, and the default Compute Engine region and zone, if set. See\n`gcloud topic configurations` for more information.\n\n## AVAILABLE PROPERTIES\n\n{properties}\n\n## EXAMPLES\n\nTo list the project property in the core section, run:\n\n  $ {command} project\n\nTo list the zone property in the compute section, run:\n\n  $ {command} compute/zone\n\nTo list all the properties, run:\n\n  $ {command} --all\n\nNote you cannot specify both --all and a property name.', version=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=False), _specified_args={'quiet': '--quiet', 'format': '--format'}, account=None, all=False, authority_selector=None, authorization_token_file=None, calliope_command=<googlecloudsdk.calliope.backend.Command object at 0x7f373330bc90>, command_path=['gcloud', 'config', 'list'], configuration=None, credential_file_override=None, document=None, filter=None, flatten=None, format='value(compute.zone)', h=None, help=None, http_timeout=None, limit=None, log_http=None, project=None, property=None, quiet=True, sort_by=None, trace_email=None, trace_log=None, trace_token=None, user_output_enabled=None, verbosity='warning', version=None).
+2018-08-13 19:01:19,197 INFO     ___FILE_ONLY___ Your active configuration is: [default]
+
+
+2018-08-13 19:01:19,203 INFO     root            Display format "config value(compute.zone)".
+2018-08-13 19:01:19,203 INFO     ___FILE_ONLY___ 
+

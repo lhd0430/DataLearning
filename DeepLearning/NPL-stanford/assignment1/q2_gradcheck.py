@@ -18,37 +18,29 @@ def gradcheck_naive(f, x):
     random.setstate(rndstate)
     fx, grad = f(x) # Evaluate function value at original point
     h = 1e-4        # Do not change this!
-    print(fx)
-    print(grad)
-    # Iterate over all indexes ix in x to check the gradient.
+
+    # Iterate over all indexes in x
     it = np.nditer(x, flags=['multi_index'], op_flags=['readwrite'])
-    print(it)
     while not it.finished:
         ix = it.multi_index
-        print(ix)
-        # Try modifying x[ix] with h defined above to compute numerical
-        # gradients (numgrad).
 
-        # Use the centered difference of the gradient.
-        # It has smaller asymptotic error than forward / backward difference
-        # methods. If you are curious, check out here:
-        # https://math.stackexchange.com/questions/2326181/when-to-use-forward-or-central-difference-approximations
-
-        # Make sure you call random.setstate(rndstate)
+        # Try modifying x[ix] with h defined above to compute
+        # numerical gradients. Make sure you call random.setstate(rndstate)
         # before calling f(x) each time. This will make it possible
         # to test cost functions with built in randomness later.
 
         ### YOUR CODE HERE:
-        xt = x[ix]
-        x[ix] = xt-h
-        random.setstate(rndstate)
-        f1,g1 = f(x)
-        x[ix] = xt+h
-        random.setstate(rndstate)
-        f2,g2 = f(x)
+        x_tmp = x[ix]
 
-        numgrad = (f2-f1)/(2*h)
-        x[ix]=xt
+        x[ix] = x_tmp + h
+        random.setstate(rndstate)
+        fx_h, _ = f(x)
+        x[ix] = x_tmp - h
+        random.setstate(rndstate)
+        fx, _ = f(x)
+        numgrad = (fx_h - fx) / (2 * h)
+
+        x[ix] = x_tmp
         ### END YOUR CODE
 
         # Compare gradients
@@ -62,17 +54,7 @@ def gradcheck_naive(f, x):
 
         it.iternext() # Step to next dimension
 
-
-
-def sanity_check():
-    """
-    Some basic sanity checks.
-    """
-    quad = lambda x: (np.sum(x ** 2), x * 2)
-
-    gradcheck_naive(quad, np.array(123.456))      # scalar test
-    gradcheck_naive(quad, np.random.randn(3,))    # 1-D test
-    gradcheck_naive(quad, np.random.randn(4,5))   # 2-D test
+    print("Gradient check passed!")
 
 
 
@@ -80,4 +62,4 @@ def sanity_check():
 
 if __name__ == "__main__":
     sanity_check()
-
+    your_sanity_checks()

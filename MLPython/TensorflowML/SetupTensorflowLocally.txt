@@ -1,1 +1,1 @@
-https://developers.google.com/machine-learning/crash-course/running-exercises-locally#running-exercises
+https://www.tensorflow.org/install/

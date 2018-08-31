@@ -22,11 +22,29 @@ def softmax(x):
         out: tf.Tensor with shape (n_sample, n_features). You need to construct this
                   tensor in this problem.
     """
+    orig_shape = x.shape
 
+    if len(x.shape) > 1:
+        # Matrix
+        ### YOUR CODE HERE
+        maxi = tf.reduce_max(x, axis=1, keep_dims=True)
+        x = tf.exp(x - maxi)
+        x = x/tf.reduce_sum(x, keepdims=True, axis=1)
+        ### END YOUR CODE
+    else:
+        # Vector
+        ### YOUR CODE HERE
+        maxi = tf.reduce_max(x)
+        x = tf.exp(x - maxi)
+        x = x/tf.reduce_sum(x)
+        ### END YOUR CODE
+
+    assert x.shape == orig_shape
     ### YOUR CODE HERE
+    
     ### END YOUR CODE
 
-    return out
+    return x
 
 
 def cross_entropy_loss(y, yhat):
@@ -54,9 +72,11 @@ def cross_entropy_loss(y, yhat):
     """
 
     ### YOUR CODE HERE
+    cost = -tf.reduce_sum(tf.to_float(y)*tf.log(yhat))
     ### END YOUR CODE
 
-    return out
+    return cost
+
 
 
 def test_softmax_basic():

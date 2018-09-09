@@ -11,7 +11,7 @@ from __future__ import division
 import sys
 import time
 import logging
-import StringIO
+import io
 from collections import defaultdict, Counter, OrderedDict
 import numpy as np
 from numpy import array, zeros, allclose
@@ -98,7 +98,7 @@ Peter	PER
 Blackburn	PER
 
 """
-    output_ = StringIO.StringIO()
+    output_ = io.StringIO()
     write_conll(output_, input)
     output_ = output_.getvalue()
     assert output == output_

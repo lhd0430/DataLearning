@@ -1,0 +1,6 @@
+https://towardsdatascience.com/lightgbm-vs-xgboost-which-algorithm-win-the-race-1ff7dd4917d
+https://medium.com/@pushkarmandot/https-medium-com-pushkarmandot-what-is-lightgbm-how-to-implement-it-how-to-fine-tune-the-parameters-60347819b7fc
+https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d
+
+https://www.kaggle.com/vinnsvinay/introduction-to-boosting-using-lgbm-lb-0-68357
+https://www.kaggle.com/alexisbcook/xgboost

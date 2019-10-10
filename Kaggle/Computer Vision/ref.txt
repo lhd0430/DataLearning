@@ -1,0 +1,6 @@
+Kaggle competitions related:
+https://github.com/mrgloom/Kaggle-Computer-Vision-Competitions-List
+
+Transfer Learning:
+TF Hub - https://www.tensorflow.org/hub
+ONNX - https://github.com/onnx/models

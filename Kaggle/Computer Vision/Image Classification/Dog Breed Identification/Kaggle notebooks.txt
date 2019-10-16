@@ -1,1 +1,0 @@
-https://www.kaggle.com/gaborfodor/dog-breed-pretrained-keras-models-lb-0-3

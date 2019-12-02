@@ -3,3 +3,5 @@ https://www.kaggle.com/c/siim-acr-pneumothorax-segmentation/overview
 https://www.kaggle.com/c/severstal-steel-defect-detection/overview
 
 https://www.kaggle.com/c/imaterialist-fashion-2019-FGVC6/
+
+https://www.kaggle.com/c/3d-object-detection-for-autonomous-vehicles
